@@ -1,0 +1,26 @@
+allprojects  {
+	apply plugin: 'maven'
+
+	group = 'org.broadleafcommerce'
+	version = '4.0.2-SNAPSHOT'
+}
+
+subprojects {
+	apply plugin: 'java'
+	apply plugin: 'eclipse'
+	apply plugin: 'groovy'
+	sourceCompatibility = 1.7
+	targetCompatibility = 1.7
+
+
+	repositories {
+		mavenLocal()
+
+		maven { url "http://repo.maven.apache.org/maven2" }
+		maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
+	}
+
+	eclipse {
+		classpath { downloadSources=true }
+	}
+}
